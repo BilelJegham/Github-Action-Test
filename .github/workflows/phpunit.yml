@@ -12,4 +12,4 @@ jobs:
     - name: Install Phpunit
       run: wget -O phpunit https://phar.phpunit.de/phpunit-8.phar && chmod +x phpunit && ./phpunit --version
     - name: Launch phppUnit
-      run: ./phpunit --bootstrap src/autoload.php tests/EmailTest
+      run: ./phpunit
