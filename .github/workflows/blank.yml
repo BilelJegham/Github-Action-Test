@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Phpunit
+      run: wget -O phpunit https://phar.phpunit.de/phpunit-8.phar && chmod +x phpunit && ./phpunit --version
+    - name: Launch phppUnit
+      run: ./phpunit --bootstrap src/autoload.php tests/EmailTest
